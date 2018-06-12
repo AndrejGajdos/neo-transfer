@@ -1,0 +1,32 @@
+@import "~bootstrap/scss/bootstrap";
+@import '~font-awesome/css/font-awesome.css';
+@import '~react-toastify/dist/ReactToastify.css';
+
+@import "node_modules/bootstrap/scss/_functions";
+@import "node_modules/bootstrap/scss/_variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.floatLabel{
+  position: absolute;
+  z-index: 10;
+  color: $gray-600;
+  font-size: 16px;
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 2px;
+  font-weight: 400;
+  background-color: rgba(255,255,255,0);
+  pointer-events: none;
+  @include transition(color .3s, top .3s, background-color .8s);
+  &.active{
+    color: $gray-600;
+     background-color: rgba(255,255,255,1);
+  }
+}
+
+.form-control, .form-control:focus {
+  border-color: #6c757d;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}

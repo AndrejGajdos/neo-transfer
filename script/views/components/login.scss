@@ -1,0 +1,49 @@
+@import "node_modules/bootstrap/scss/_functions";
+@import "node_modules/bootstrap/scss/_variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+.Login{
+  .input-group{
+    @include media-breakpoint-down(sm){
+      flex-direction: column;
+    }
+  }
+  .form-text{
+    @include media-breakpoint-down(sm){
+      text-align: center;
+    }
+  }
+  .InputContainer{
+    &__Input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &__Btn .btn{
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-bottom: 1rem;
+    }
+
+    .input-group-append{
+      @include media-breakpoint-up(sm){
+        margin-right: 1rem;
+      }
+    }
+  }
+  .SubmitBtn{
+    @include media-breakpoint-down(sm){
+      margin: 0 auto;
+    }
+  }
+  .floatLabel {
+    left: 25px;
+    top: 27px;
+    &.active{
+      top: 4px;
+    }
+  }
+}

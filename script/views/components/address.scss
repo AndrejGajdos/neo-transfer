@@ -1,0 +1,27 @@
+@import "node_modules/bootstrap/scss/_functions";
+@import "node_modules/bootstrap/scss/_variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+.Address{
+  &__body{
+    overflow: auto;
+
+    @include media-breakpoint-down(sm){
+      flex-direction: column;
+    }
+    @include media-breakpoint-up(sm){
+      display: flex;
+      align-items: center;
+    }
+
+    .btn{
+      @include media-breakpoint-up(sm){
+        margin-left: auto;
+      }
+      @include media-breakpoint-down(sm){
+        margin: 0 auto;
+        margin-top: 1rem;
+      }
+    }
+  }
+}

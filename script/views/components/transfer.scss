@@ -1,0 +1,12 @@
+.Transfer{
+  .floatLabel {
+    left: 5px;
+    top: 7px;
+    &.active{
+      top: -19px;
+    }
+  }
+  .row .floatLabel {
+    left: 20px;
+  }
+}
