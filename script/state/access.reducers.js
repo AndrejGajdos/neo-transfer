@@ -22,7 +22,9 @@ const access = (state = {
     }
     case ActionTypes.LOGIN_FAILED: {
       return {
-        error: action.message,
+        error: {
+          message: action.message,
+        },
       };
     }
     case ActionTypes.LOGOUT_FAILED: {

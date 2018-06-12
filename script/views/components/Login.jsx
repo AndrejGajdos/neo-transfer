@@ -25,7 +25,7 @@ class Login extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.error) {
       this.setState({ error: nextProps.error }, () => {
-        toast.error(nextProps.error);
+        toast.error(nextProps.error.message);
       });
     }
   }

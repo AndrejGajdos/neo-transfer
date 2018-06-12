@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ToastContainer } from 'react-toastify';
-import Header from 'components/Header/Header';
-import Footer from 'components/Footer/Footer';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 import Main from 'views/Main';
 import './App.scss';
 

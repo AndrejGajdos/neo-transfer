@@ -7,7 +7,9 @@ const transfer = (state = {
   switch (action.type) {
     case ActionTypes.TRANSFER_FAILED: {
       return {
-        error: action.message,
+        error: {
+          message: action.message,
+        },
       };
     }
     case ActionTypes.TRANSFER_SUCCEEDED: {
