@@ -12,7 +12,7 @@
     "dev": "webpack-dev-server -d --progress --colors --port 8090 --hot --inline",
     "build": "webpack -d --watch --progress",
     "prod": "webpack -p",
-    "heroku-postbuild": "npm run prod"
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [
     "NEO",
