@@ -10,7 +10,7 @@
     "start": "node ./script/server.js",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server -d --progress --colors --port 8090 --hot --inline",
-    "build": "webpack -d --watch --progress",
+    "build": "webpack -d",
     "prod": "webpack -p",
     "heroku-postbuild": "npm run build"
   },
