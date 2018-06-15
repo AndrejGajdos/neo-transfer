@@ -14,7 +14,9 @@ const transfer = (state = {
     }
     case ActionTypes.TRANSFER_SUCCEEDED: {
       return {
-        success: 'Transaction complete! Your balance will automatically update when the blockchain has processed it.',
+        success: {
+          message: 'Transaction complete! Your balance will automatically update when the blockchain has processed it.',
+        },
       };
     }
     default:

@@ -28,10 +28,10 @@ class Transfer extends Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.transferMessage !== nextProps.transferMessage) {
       if (nextProps.transferMessage.error) {
-        toast.error(nextProps.transferMessage.error);
+        toast.error(nextProps.transferMessage.error.message);
       }
       if (nextProps.transferMessage.success) {
-        toast.success(nextProps.transferMessage.success);
+        toast.success(nextProps.transferMessage.success.message);
       }
     }
   }
