@@ -44,7 +44,8 @@
     "react-slidedown": "^1.3.0",
     "react-toastify": "^4.1.0",
     "redux": "^4.0.0",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.0",
+    "webpack-bundle-analyzer": "^2.13.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.4.1",
@@ -67,7 +68,6 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
@@ -83,6 +83,7 @@
     "sass-loader": "^7.0.1",
     "sass-resources-loader": "^1.3.3",
     "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.1.2",

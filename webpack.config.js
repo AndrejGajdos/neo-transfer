@@ -5,8 +5,9 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 // const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const TARGET = process.env.npm_lifecycle_event;
 console.log(`target event is ${TARGET}`);
@@ -132,10 +133,7 @@ if (TARGET === 'prod' || !TARGET) {
         },
         {
           test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: 'css-loader',
-          }),
+          use: ['style-loader', 'css-loader'],
         },
         {
           test: /\.(eot|ttf|svg|gif|png|jpg|otf|woff|woff2)$/,
@@ -151,31 +149,8 @@ if (TARGET === 'prod' || !TARGET) {
         title: 'neon-js',
         template: 'index-template.ejs',
       }),
-      new ExtractTextPlugin('styles.css'),
       new webpack.optimize.AggressiveMergingPlugin(),
       new webpack.optimize.OccurrenceOrderPlugin(),
-      new webpack.optimize.UglifyJsPlugin({
-        mangle: true,
-        compress: {
-          warnings: false, // Suppress uglification warnings
-          pure_getters: true,
-          unsafe: true,
-          unsafe_comps: true,
-          screw_ie8: true,
-          conditionals: true,
-          unused: true,
-          comparisons: true,
-          sequences: true,
-          dead_code: true,
-          evaluate: true,
-          if_return: true,
-          join_vars: true,
-        },
-        output: {
-          comments: false,
-        },
-        exclude: [/\.min\.js$/gi], // skip pre-minified libs
-      }),
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
       new CompressionPlugin({
         asset: '[path].gz[query]',
@@ -183,6 +158,20 @@ if (TARGET === 'prod' || !TARGET) {
         test: /\.js$|\.css$|\.html$/,
         threshold: 10240,
         minRatio: 0,
+      }),
+      new UglifyJsPlugin({
+        parallel: true,
+        uglifyOptions: {
+          compress: {
+            unsafe: true,
+            unsafe_comps: true,
+          },
+          output: {
+            comments: false,
+          },
+          ie8: true,
+        },
+        exclude: [/\.min\.js$/gi], // skip pre-minified libs
       }),
     ],
   });
@@ -237,6 +226,7 @@ if (TARGET === 'dev' || !TARGET) {
       }),
       new FriendlyErrorsWebpackPlugin(),
       // new DuplicatePackageCheckerPlugin(),
+      // new BundleAnalyzerPlugin(),
     ],
   });
 }
