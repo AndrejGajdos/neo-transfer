@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 import { wallet } from '@cityofzion/neon-js';
 import getBalance from 'actions/balance.actions';
 import * as ActionTypes from '../constants/actionTypes';

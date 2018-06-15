@@ -10,9 +10,9 @@
     "start": "node ./script/server.js",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "dev": "webpack-dev-server -d --progress --colors --port 8090 --hot --inline",
-    "build": "webpack -d",
+    "build": "webpack -d --watch --progress",
     "prod": "webpack -p",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run prod"
   },
   "keywords": [
     "NEO",
