@@ -6,7 +6,7 @@ This project is built with React, Redux, Redux-Saga, Twitter Bootstrap and neon-
 
 ## Preview
 
-![preview](media/neo_transfer_preview.gif){:height="500px"}
+![preview](media/neo_transfer_preview.gif | height=500)
 
 ## Demo
 
