@@ -23,3 +23,7 @@ $ npm i
 # run project -- webpack dev server
 $ npm run webpack
 ```
+
+## License
+
+MIT © [Andrej Gajdos](http://andrejgajdos.com)
